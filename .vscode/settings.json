@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^php -l login\\.php ; php -l setup\\\\setup\\.php ; php -l setup\\\\setup_admin\\.php ; php -l setup\\\\test_db\\.php ; php -l setup\\\\status\\.php$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
