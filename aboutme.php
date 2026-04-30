@@ -49,7 +49,7 @@ include 'header.php';
                         <span class="icon">💬</span>
                         <span>WhatsApp</span>
                     </a>
-                    <a href="https://l.instagram.com/?u=https%3A%2F%2Fshopee.co.id%2Findagaleri_1%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnVyHMeMN50SYhBAs8A-B1nYqZB2y6hWnmhRyY_SwGyHqPClF04MW103l2dZ0_aem_o4QV-dNYnbiR97pzGFCyOw&e=AT5eGqFCpXYNFlLB-A3Bht7J7JinpqDTE22rqz1S39PFSZ-KSVhv6t2ym3rnXwde1pdwtf7_OzmYbkNF9Xr0ArRYqfhfjkKcHQxIChYmbvG2QPwO7mkcnrgagQ" class="contact-btn shopee" target="_blank">
+                    <a href="https://shopee.co.id/indagaleri_1?categoryId=100014&entryPoint=ShopByPDP&itemId=46656641400" class="contact-btn shopee" target="_blank">
                         <span class="icon">🛒</span>
                         <span>Shopee</span>
                     </a>

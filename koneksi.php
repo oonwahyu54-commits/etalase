@@ -1,25 +1,55 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$dbName = "etalase_db";
+define('DB_HOST', '127.0.0.1');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'etalase_db');
 
-$koneksi = mysqli_connect($host, $user, $pass);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+
+$koneksi = mysqli_connect(DB_HOST, DB_USER, DB_PASS);
 if (!$koneksi) {
-    die("Koneksi gagal: " . mysqli_connect_error());
+    die("Koneksi MySQL gagal: " . mysqli_connect_error());
 }
 
-// Buat database jika belum ada
-if (!mysqli_select_db($koneksi, $dbName)) {
-    $createDB = mysqli_query($koneksi, "CREATE DATABASE IF NOT EXISTS `$dbName` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+if (!mysqli_select_db($koneksi, DB_NAME)) {
+    $createDB = mysqli_query($koneksi, "CREATE DATABASE IF NOT EXISTS `" . DB_NAME . "` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
     if (!$createDB) {
-        die("Gagal membuat database $dbName: " . mysqli_error($koneksi));
+        die("Gagal membuat database " . DB_NAME . ": " . mysqli_error($koneksi));
     }
-    mysqli_select_db($koneksi, $dbName);
+    mysqli_select_db($koneksi, DB_NAME);
+}
+
+if (!mysqli_set_charset($koneksi, 'utf8mb4')) {
+    die("Gagal set charset: " . mysqli_error($koneksi));
+}
+
+function safeQuery($koneksi, $query) {
+    try {
+        return mysqli_query($koneksi, $query);
+    } catch (mysqli_sql_exception $e) {
+        return false;
+    }
+}
+
+function createUsersTable($koneksi) {
+    $createUsers = "CREATE TABLE IF NOT EXISTS users (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        username VARCHAR(100) UNIQUE NOT NULL,
+        password VARCHAR(255) NOT NULL,
+        email VARCHAR(100),
+        role VARCHAR(50) DEFAULT 'admin',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
+    mysqli_query($koneksi, $createUsers);
+}
+
+function repairUsersTable($koneksi) {
+    mysqli_query($koneksi, "DROP TABLE IF EXISTS users");
+    createUsersTable($koneksi);
 }
 
 function ensureProdukTable($koneksi) {
-    $checkProduk = mysqli_query($koneksi, "SHOW TABLES LIKE 'produk'");
+    $checkProduk = safeQuery($koneksi, "SHOW TABLES LIKE 'produk'");
     if (!$checkProduk) {
         return;
     }
@@ -55,7 +85,7 @@ function ensureProdukTable($koneksi) {
         ];
 
         foreach ($requiredColumns as $column => $definition) {
-            $checkColumn = mysqli_query($koneksi, "SHOW COLUMNS FROM produk LIKE '$column'");
+            $checkColumn = safeQuery($koneksi, "SHOW COLUMNS FROM produk LIKE '$column'");
             if ($checkColumn && mysqli_num_rows($checkColumn) == 0) {
                 mysqli_query($koneksi, "ALTER TABLE produk ADD COLUMN $column $definition");
             }
@@ -64,30 +94,33 @@ function ensureProdukTable($koneksi) {
 }
 
 function ensureUsersTable($koneksi) {
-    $checkUsers = mysqli_query($koneksi, "SHOW TABLES LIKE 'users'");
+    $checkUsers = safeQuery($koneksi, "SHOW TABLES LIKE 'users'");
     if (!$checkUsers) {
+        repairUsersTable($koneksi);
         return;
     }
 
     if (mysqli_num_rows($checkUsers) == 0) {
-        $createUsers = "CREATE TABLE IF NOT EXISTS users (
-            id INT PRIMARY KEY AUTO_INCREMENT,
-            username VARCHAR(100) UNIQUE NOT NULL,
-            password VARCHAR(255) NOT NULL,
-            email VARCHAR(100),
-            role VARCHAR(50) DEFAULT 'admin',
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci";
-        mysqli_query($koneksi, $createUsers);
+        createUsersTable($koneksi);
     }
 
-    $roleColumnCheck = mysqli_query($koneksi, "SHOW COLUMNS FROM users LIKE 'role'");
-    if ($roleColumnCheck && mysqli_num_rows($roleColumnCheck) == 0) {
+    $roleColumnCheck = safeQuery($koneksi, "SHOW COLUMNS FROM users LIKE 'role'");
+    if ($roleColumnCheck === false) {
+        repairUsersTable($koneksi);
+        return;
+    }
+
+    if (mysqli_num_rows($roleColumnCheck) == 0) {
         mysqli_query($koneksi, "ALTER TABLE users ADD COLUMN role VARCHAR(50) DEFAULT 'admin'");
     }
 
-    $adminCheck = mysqli_query($koneksi, "SELECT id FROM users WHERE role = 'admin' LIMIT 1");
-    if ($adminCheck && mysqli_num_rows($adminCheck) == 0) {
+    $adminCheck = safeQuery($koneksi, "SELECT id FROM users WHERE role = 'admin' LIMIT 1");
+    if ($adminCheck === false) {
+        repairUsersTable($koneksi);
+        return;
+    }
+
+    if (mysqli_num_rows($adminCheck) == 0) {
         $defaultAdmin = 'admin';
         $defaultPass = password_hash('admin123', PASSWORD_BCRYPT);
         $defaultEmail = 'admin@example.com';
@@ -102,6 +135,4 @@ function ensureUsersTable($koneksi) {
 
 ensureProdukTable($koneksi);
 ensureUsersTable($koneksi);
-
-mysqli_set_charset($koneksi, 'utf8mb4');
 ?>

@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || strtolower($_SE
     exit;
 }
 
-include '../koneksi.php';
+include_once __DIR__ . '/../koneksi.php';
 
 $produk = mysqli_query($koneksi, 'SELECT * FROM produk ORDER BY id DESC');
 

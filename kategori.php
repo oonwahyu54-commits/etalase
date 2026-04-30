@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include_once __DIR__ . '/koneksi.php';
 
 // Tambah kolom kategori ke tabel produk jika belum ada
 $checkKategori = mysqli_query($koneksi, "SHOW COLUMNS FROM produk LIKE 'kategori'");

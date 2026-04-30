@@ -1,5 +1,5 @@
 <?php 
-include 'koneksi.php';
+include_once __DIR__ . '/koneksi.php';
 include 'header.php';
 
 // Ambil kategori dari URL jika ada (Filter)

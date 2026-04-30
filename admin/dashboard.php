@@ -15,7 +15,7 @@ if (!isset($_SESSION['role']) || strtolower($_SESSION['role']) !== 'admin') {
     exit;
 }
 
-include '../koneksi.php';
+include_once __DIR__ . '/../koneksi.php';
 $username = $_SESSION['username'];
 ?>
 

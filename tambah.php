@@ -1,6 +1,6 @@
 <?php
 include 'header.php';
-include 'koneksi.php';
+include_once __DIR__ . '/koneksi.php';
 
 // Check session
 if (session_status() === PHP_SESSION_NONE) {
