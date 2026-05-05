@@ -12,7 +12,7 @@ include 'header.php';
         </div>
 
         <div class="kontak-item">
-            <strong>Alamat</strong>
+            <strong>Alamat< /strong>
             Ds. Segeran, Kec. Juntinyuat,<br>
             Kabupaten Indramayu, Jawa Barat
         </div>
