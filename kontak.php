@@ -12,12 +12,12 @@ include 'header.php';
         </div>
 
         <div class="kontak-item">
-            <strong>Alamat< /strong>
+            <strong>Alamat</strong>
             Ds. Segeran, Kec. Juntinyuat,<br>
             Kabupaten Indramayu, Jawa Barat
         </div>
     </div>
-        <h2 class="kontak-title">📞 Hubungi Kami</h2>
+        <h2 class="kontak-title">Hubungi Kami</h2>
 
         <div class="kontak-methods">
             <a href="#" class="kontak-btn whatsapp">
@@ -46,7 +46,7 @@ include 'header.php';
             <p>
                 Terima kasih telah mengunjungi Toko Inda Gallery. 
             </p>
-            <p> kami harap, kami dapat melayani anda dengan sebaik mungkin 💝</p>
+            <p> kami harap, kami dapat melayani anda dengan sebaik mungkin</p>
         </div>
 </div>
 

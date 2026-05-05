@@ -36,13 +36,13 @@ $currentImages = array_filter(array_map('trim', explode(',', $row['gambar'])));
 
 <div class="admin-container">
     <div class="admin-sidebar">
-        <h2>🔐 Admin Panel</h2>
+        <h2>Admin Panel</h2>
         <ul>
-            <li><a href="../index.php">🏠 Home</a></li>
-            <li><a href="dashboard.php">📊 Dashboard</a></li>
-            <li><a href="../tambah.php">➕ Tambah Produk</a></li>
-            <li><a href="produk-list.php" class="active">📦 Kelola Produk</a></li>
-            <li><a href="logout.php" class="logout-btn">🚪 Logout</a></li>
+            <li><a href="../index.php">Home</a></li>
+            <li><a href="dashboard.php">Dashboard</a></li>
+            <li><a href="../tambah.php">Tambah Produk</a></li>
+            <li><a href="produk-list.php" class="active">Kelola Produk</a></li>
+            <li><a href="logout.php" class="logout-btn">Logout</a></li>
         </ul>
     </div>
 

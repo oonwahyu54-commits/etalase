@@ -82,7 +82,7 @@ if (!isset($_SESSION['user_id'])) {
 </div>
 
 <div class="tmbh">
-    <a href="index.php">← Kembali ke home</a>
+    <a href="index.php">Kembali ke home</a>
 </div>
 
 </body>

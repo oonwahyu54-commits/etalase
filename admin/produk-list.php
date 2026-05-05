@@ -33,7 +33,7 @@ if (isset($_GET['pesan'])) {
             <div class="topbar">
                 <h1>Kelola Produk</h1>
                 <div>
-                    <a href="../tambah.php">➕ Tambah Produk</a>
+                    <a href="../tambah.php">Tambah Produk</a>
                     <a href="dashboard.php">← Dashboard</a>
                 </div>
             </div>
