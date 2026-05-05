@@ -30,14 +30,14 @@ $username = $_SESSION['username'];
 <a href="daftar_admin.php"></a>
 <div class="admin-container">
     <div class="admin-sidebar">
-        <h2>🔐 Admin Panel</h2>
+        <h2>Halaman Admin</h2>
         <ul>
-            <li><a href="../index.php">🏠 Home</a></li>
-            <li><a href="dashboard.php" class="active">📊 Dashboard</a></li>
-            <li><a href="../tambah.php">➕ Tambah Produk</a></li>
-            <li><a href="produk-list.php">📦 Kelola Produk</a></li>
-            <li><a href="slider.php">🖼️ Kelola Slider</a></li>
-            <li><a href="logout.php" class="logout-btn">🚪 Logout</a></li>
+            <li><a href="../index.php">Home</a></li>
+            <li><a href="dashboard.php" class="active">Dashboard</a></li>
+            <li><a href="../tambah.php">Tambah Produk</a></li>
+            <li><a href="produk-list.php">Kelola Produk</a></li>
+            <li><a href="slider.php">Kelola Slider</a></li>
+            <li><a href="logout.php" class="logout-btn">Logout</a></li>
         </ul>
     </div>
 
@@ -67,11 +67,11 @@ $username = $_SESSION['username'];
         <div class="content-section">
             <h2>Aksi Cepat</h2>
             <div class="quick-actions">
-                <a href="../tambah.php" class="action-btn">➕ Tambah Produk</a>
-                <a href="produk-list.php" class="action-btn">📦 Kelola Produk</a>
-                <a href="slider.php" class="action-btn">🖼️ Kelola Slider</a>
-                <a href="../index.php" class="action-btn">🏠 Lihat Website</a>
-                <a href="logout.php" class="action-btn">🚪 Logout</a>
+                <a href="../tambah.php" class="action-btn">Tambah Produk</a>
+                <a href="produk-list.php" class="action-btn">Kelola Produk</a>
+                <a href="slider.php" class="action-btn">Kelola Slider</a>
+                <a href="../index.php" class="action-btn">Lihat Website</a>
+                <a href="logout.php" class="action-btn">Logout</a>
             </div>
         </div>
     </div>

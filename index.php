@@ -60,7 +60,7 @@ $slider = mysqli_query($koneksi, "SELECT * FROM slider ORDER BY id DESC");
     <div class="category-buttons">
         
         <a href="index.php" class="cat-btn <?php echo ($kategori_filter == '') ? 'active' : ''; ?>">
-            🛍️ Semua Produk
+            Semua Produk
         </a>
 
         <?php

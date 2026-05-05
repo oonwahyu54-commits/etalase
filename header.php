@@ -16,12 +16,12 @@
             <h1 class="textjudul">INDA GALLERY</h1>
 
             <nav class="navbar">
-                <a href="index.php">🏠 Beranda</a>
-                <a href="aboutme.php">👤 About Me</a>
-                <a href="kontak.php">📞 Kontak</a>
+                <a href="index.php">Beranda</a>
+                <a href="aboutme.php">About Me</a>
+                <a href="kontak.php">Kontak</a>
 
                 <?php if (isset($_SESSION['user_id'])): ?>
-                    <a href="admin/logout.php">🚪 Logout</a>
+                    <a href="admin/logout.php">Logout</a>
                 <?php endif; ?>
             </nav>
         </div>
