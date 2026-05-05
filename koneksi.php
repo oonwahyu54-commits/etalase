@@ -135,4 +135,15 @@ function ensureUsersTable($koneksi) {
 
 ensureProdukTable($koneksi);
 ensureUsersTable($koneksi);
+function ensureSliderTable($koneksi) {
+    $createSlider = "CREATE TABLE IF NOT EXISTS slider (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        gambar VARCHAR(255),
+        judul VARCHAR(255),
+        deskripsi TEXT
+    )";
+    mysqli_query($koneksi, $createSlider);
+}
+
+ensureSliderTable($koneksi);
 ?>

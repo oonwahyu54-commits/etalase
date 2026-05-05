@@ -15,7 +15,7 @@ include 'header.php';
                 <p>
                     Halo, saya adalah pemilik <strong>Inda Gallery</strong>. Website ini dibuat untuk menampilkan 
                     koleksi fashion muslim berkualitas yang kami jual. Kami juga memiliki toko offline bernama 
-                    <strong>indagall</strong> yang siap melayani Anda dengan sebaik-baiknya.
+                    <strong>Inda Gallery</strong> yang siap melayani Anda dengan sebaik-baiknya.
                 </p>
             </div>
 
@@ -25,10 +25,10 @@ include 'header.php';
                     Kami menyediakan berbagai produk fashion muslim dengan kualitas terbaik dan harga yang sangat terjangkau:
                 </p>
                 <ul class="about-list">
-                    <li>👗 Gamis dan Abaya</li>
-                    <li>🧢 Hijab dan Kerudung</li>
-                    <li>👕 Fashion Muslim Modern</li>
-                    <li>✨ Desain Eksklusif</li>
+                    <li>👗 Gamis & Abaya</li>
+                    <li>🧕 Hijab & Kerudung</li>
+                    <li>✨ Fashion Muslim Modern</li>
+                    <li>🧕 Aksesoris Hijab</li>
                 </ul>
             </div>
 
@@ -40,28 +40,6 @@ include 'header.php';
                     <li>✓ Pelayanan Customer Service Terbaik</li>
                     <li>✓ Pengiriman Cepat dan Aman</li>
                 </ul>
-            </div>
-
-            <div class="about-contacts">
-                <h2>📞 Hubungi Kami</h2>
-                <div class="contact-methods">
-                    <a href="https://wa.me/62" class="contact-btn whatsapp" target="_blank">
-                        <span class="icon">💬</span>
-                        <span>WhatsApp</span>
-                    </a>
-                    <a href="https://shopee.co.id/indagaleri_1?categoryId=100014&entryPoint=ShopByPDP&itemId=46656641400" class="contact-btn shopee" target="_blank">
-                        <span class="icon">🛒</span>
-                        <span>Shopee</span>
-                    </a>
-                    <a href="https://facebook.com" class="contact-btn facebook" target="_blank">
-                        <span class="icon">f</span>
-                        <span>Facebook</span>
-                    </a>
-                    <a href="https://www.instagram.com/galeri__inda?igsh=MWZxYTc0ejhxNHdvMA==" class="contact-btn instagram" target="_blank">
-                        <span class="icon">📷</span>
-                        <span>Instagram</span>
-                    </a>
-                </div>
             </div>
 
             <div class="about-footer">

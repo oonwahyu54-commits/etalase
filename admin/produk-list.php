@@ -77,7 +77,7 @@ if (isset($_GET['pesan'])) {
                                 </td>
                                 <td class="actions">
                                     <a class="edit" href="edit.php?id=<?php echo $row['id']; ?>">Edit</a>
-                                    <form action="../proses_hapus.php" method="POST">
+                                    <form action="../proses_hapus.php" method="POST"><br>
                                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                                         <button type="submit" class="delete" onclick="return confirm('Yakin ingin menghapus produk ini?');">Hapus</button>
                                     </form>

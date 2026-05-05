@@ -1,5 +1,4 @@
 <?php
-include 'header.php';
 include_once __DIR__ . '/koneksi.php';
 
 // Check session
@@ -83,7 +82,7 @@ if (!isset($_SESSION['user_id'])) {
 </div>
 
 <div class="tmbh">
-    <a href="index.php">← Kembali ke Dashboard</a>
+    <a href="index.php">← Kembali ke home</a>
 </div>
 
 </body>

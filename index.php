@@ -24,46 +24,37 @@ if (!$data) {
 ?>
 
 <!-- Carousel Slide -->
+<?php
+$slider = mysqli_query($koneksi, "SELECT * FROM slider ORDER BY id DESC");
+?>
+
 <div class="carousel-container">
     <div class="carousel">
+
         <div class="carousel-slides" id="carouselSlides">
-            <div class="slide">
-                <img src="gambar/gamis1.jpg" alt="Gamis 1">
-                <div class="slide-content">
-                    <h3>Koleksi Gamis Terbaru</h3>
-                    <p>Kualitas Premium dengan Harga Terjangkau</p>
+
+            <?php while($row = mysqli_fetch_assoc($slider)) { ?>
+                <div class="slide">
+                    <img src="gambar/<?php echo $row['gambar']; ?>">
+
+                    <div class="slide-content">
+                        <h3><?php echo htmlspecialchars($row['judul']); ?></h3>
+                        <p><?php echo htmlspecialchars($row['deskripsi']); ?></p>
+                    </div>
                 </div>
-            </div>
-            <div class="slide">
-                <img src="gambar/gamis2.jpg" alt="Gamis 2">
-                <div class="slide-content">
-                    <h3>Fashion Muslim Modern</h3>
-                    <p>Desain Eksklusif untuk Anda</p>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="gambar/hijab1.jpg" alt="Hijab">
-                <div class="slide-content">
-                    <h3>Koleksi Hijab Cantik</h3>
-                    <p>Berbagai Warna dan Model</p>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="gambar/gamis3.jpg" alt="Gamis 3">
-                <div class="slide-content">
-                    <h3>Tren Fashion Terkini</h3>
-                    <p>Bergabunglah dengan Ribuan Pelanggan Kami</p>
-                </div>
-            </div>
+            <?php } ?>
+
         </div>
-        
+
         <button class="carousel-arrow prev" onclick="moveSlide(-1)">❮</button>
         <button class="carousel-arrow next" onclick="moveSlide(1)">❯</button>
-        
+
         <div class="carousel-controls" id="carouselDots"></div>
+
     </div>
 </div>
 
+</div>
 <div class="category-section">
     <h2 class="category-title">Pilih Kategori</h2>
     <div class="category-buttons">
@@ -120,11 +111,13 @@ if (!$data) {
 
 <script>
 let currentSlide = 0;
-const totalSlides = document.getElementById('carouselSlides').children.length;
+const slides = document.getElementById('carouselSlides');
+const totalSlides = slides.children.length;
 
-// Inisialisasi dots
 function initDots() {
     const dotsContainer = document.getElementById('carouselDots');
+    dotsContainer.innerHTML = '';
+
     for(let i = 0; i < totalSlides; i++) {
         const dot = document.createElement('div');
         dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
@@ -134,10 +127,8 @@ function initDots() {
 }
 
 function showSlide(n) {
-    const slides = document.getElementById('carouselSlides');
     slides.style.transform = `translateX(-${n * 100}%)`;
-    
-    // Update dots
+
     document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
         dot.classList.toggle('active', index === n);
     });
@@ -153,12 +144,10 @@ function goToSlide(n) {
     showSlide(currentSlide);
 }
 
-// Auto slide setiap 5 detik
 setInterval(() => {
     moveSlide(1);
-}, 5000);
+}, 4000);
 
-// Initialize
 initDots();
 showSlide(0);
 </script>
