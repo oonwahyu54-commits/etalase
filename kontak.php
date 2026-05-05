@@ -1,7 +1,7 @@
 <?php
 include 'header.php';
 ?>
-
+<link rel="stylesheet" href="css/style.css">
 <div class="kontak-container">
     <h2>Kontak Kami</h2>
 
