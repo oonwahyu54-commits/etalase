@@ -20,7 +20,7 @@ include 'header.php';
         <h2 class="kontak-title">Hubungi Kami</h2>
 
         <div class="kontak-methods">
-            <a href="#" class="kontak-btn whatsapp">
+            <a href="https://api.whatsapp.com/qr/T774FZXG3XZUA1?autoload=1&app_absent=0" class="kontak-btn whatsapp">
                 <span class="icon">💬</span>
                 <span>WhatsApp</span>
             </a>
