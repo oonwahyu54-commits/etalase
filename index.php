@@ -35,7 +35,7 @@ $slider = mysqli_query($koneksi, "SELECT * FROM slider ORDER BY id DESC");
 
             <?php while($row = mysqli_fetch_assoc($slider)) { ?>
                 <div class="slide">
-                    <img src="gambar/<?php echo $row['gambar']; ?>">
+                    <img src="<?php echo IMAGES_URL . htmlspecialchars($row['gambar']); ?>">
 
                     <div class="slide-content">
                         <h3><?php echo htmlspecialchars($row['judul']); ?></h3>
@@ -87,8 +87,8 @@ $slider = mysqli_query($koneksi, "SELECT * FROM slider ORDER BY id DESC");
         <div class="card">
             <div class="card-image">
                 <?php $gambarUtama = trim(explode(',', $row['gambar'])[0]); ?>
-                <?php if ($gambarUtama && file_exists('gambar/' . $gambarUtama)): ?>
-                    <img src="gambar/<?php echo htmlspecialchars($gambarUtama); ?>" alt="<?php echo htmlspecialchars($row['nama']); ?>">
+                <?php if ($gambarUtama && file_exists(IMAGES_PATH . $gambarUtama)): ?>
+                    <img src="<?php echo IMAGES_URL . htmlspecialchars($gambarUtama); ?>" alt="<?php echo htmlspecialchars($row['nama']); ?>">
                 <?php else: ?>
                     <div class="no-image-box">Tidak ada gambar</div>
                 <?php endif; ?>

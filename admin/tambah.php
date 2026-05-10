@@ -1,5 +1,5 @@
 <?php
-include_once __DIR__ . '/koneksi.php';
+include_once __DIR__ . '/../koneksi.php';
 
 // Check session
 if (session_status() === PHP_SESSION_NONE) {
@@ -8,7 +8,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Redirect ke login jika belum login
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit;
 }
 ?>
@@ -16,9 +16,9 @@ if (!isset($_SESSION['user_id'])) {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>Tambah Produk - Inda Gallery</title>
-    <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
@@ -82,7 +82,7 @@ if (!isset($_SESSION['user_id'])) {
 </div>
 
 <div class="tmbh">
-    <a href="index.php">Kembali ke home</a>
+    <a href="dashboard.php">← Kembali ke Dashboard</a>
 </div>
 
 </body>

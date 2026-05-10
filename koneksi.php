@@ -1,26 +1,66 @@
 <?php
+// ========================================
+// KONFIGURASI DATABASE - INDA GALLERY
+// ========================================
+
+// Database Connection
 define('DB_HOST', '127.0.0.1');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'etalase_db');
 
+// ========================================
+// KONFIGURASI URL & PATH
+// ========================================
+
+// Tentukan BASE_URL berdasarkan environment
+if (!defined('BASE_URL')) {
+    $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+    $host = $_SERVER['HTTP_HOST'];
+    $path = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/\\') . '/';
+    
+    // Jika di subfolder
+    if (strpos($path, '/etalase/') !== false) {
+        $path = '/etalase/';
+    }
+    
+    define('BASE_URL', $protocol . $host . $path);
+}
+
+define('IMAGES_URL', BASE_URL . 'gambar/');
+define('IMAGES_PATH', __DIR__ . '/gambar/');
+
+// ========================================
+// KONEKSI DATABASE
+// ========================================
+
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 $koneksi = mysqli_connect(DB_HOST, DB_USER, DB_PASS);
+
 if (!$koneksi) {
-    die("Koneksi MySQL gagal: " . mysqli_connect_error());
+    die("❌ Koneksi MySQL gagal: " . mysqli_connect_error());
 }
 
 if (!mysqli_select_db($koneksi, DB_NAME)) {
     $createDB = mysqli_query($koneksi, "CREATE DATABASE IF NOT EXISTS `" . DB_NAME . "` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
     if (!$createDB) {
-        die("Gagal membuat database " . DB_NAME . ": " . mysqli_error($koneksi));
+        die("❌ Gagal membuat database " . DB_NAME . ": " . mysqli_error($koneksi));
     }
     mysqli_select_db($koneksi, DB_NAME);
 }
 
 if (!mysqli_set_charset($koneksi, 'utf8mb4')) {
-    die("Gagal set charset: " . mysqli_error($koneksi));
+    die("❌ Gagal set charset: " . mysqli_error($koneksi));
+}
+
+// ========================================
+// BUAT FOLDER GAMBAR JIKA BELUM ADA
+// ========================================
+if (!is_dir(IMAGES_PATH)) {
+    if (!mkdir(IMAGES_PATH, 0755, true)) {
+        die("❌ Gagal membuat folder gambar");
+    }
 }
 
 function safeQuery($koneksi, $query) {

@@ -39,7 +39,7 @@ $data = mysqli_query($koneksi, "SELECT * FROM slider ORDER BY id DESC");
             <?php while($row = mysqli_fetch_assoc($data)) { ?>
             <tr>
                 <td>
-                    <img src="../gambar/<?php echo $row['gambar']; ?>">
+                    <img src="<?php echo IMAGES_URL . htmlspecialchars($row['gambar']); ?>">
                 </td>
                 <td><?php echo htmlspecialchars($row['judul']); ?></td>
                 <td><?php echo htmlspecialchars($row['deskripsi']); ?></td>

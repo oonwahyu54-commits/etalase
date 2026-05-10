@@ -1,4 +1,5 @@
 <?php
+include_once 'koneksi.php';
 include 'header.php';
 ?>
 
@@ -47,4 +48,7 @@ include 'header.php';
         </div>
     </div>
 </div>
+
+</body>
+</html>
 

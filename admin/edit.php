@@ -40,7 +40,7 @@ $currentImages = array_filter(array_map('trim', explode(',', $row['gambar'])));
         <ul>
             <li><a href="../index.php">Home</a></li>
             <li><a href="dashboard.php">Dashboard</a></li>
-            <li><a href="../tambah.php">Tambah Produk</a></li>
+            <li><a href="tambah.php">Tambah Produk</a></li>
             <li><a href="produk-list.php" class="active">Kelola Produk</a></li>
             <li><a href="logout.php" class="logout-btn">Logout</a></li>
         </ul>
@@ -53,7 +53,7 @@ $currentImages = array_filter(array_map('trim', explode(',', $row['gambar'])));
         </div>
 
         <div class="content-section">
-            <form action="../proses_edit.php" method="POST" enctype="multipart/form-data">
+            <form action="proses_edit.php" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                 
                 <label>Nama Produk</label>
@@ -96,8 +96,8 @@ $currentImages = array_filter(array_map('trim', explode(',', $row['gambar'])));
                 <div style="display: flex; gap: 10px; margin: 10px 0; flex-wrap: wrap;">
                     <?php if (!empty($currentImages)): ?>
                         <?php foreach ($currentImages as $img): ?>
-                            <?php if ($img && file_exists('../gambar/' . $img)): ?>
-                                <img src="../gambar/<?php echo htmlspecialchars($img); ?>" width="100" height="100" style="object-fit: cover; border-radius: 8px; border: 1px solid #ddd;">
+                            <?php if ($img && file_exists(IMAGES_PATH . $img)): ?>
+                                <img src="<?php echo IMAGES_URL . htmlspecialchars($img); ?>" width="100" height="100" style="object-fit: cover; border-radius: 8px; border: 1px solid #ddd;">
                             <?php endif; ?>
                         <?php endforeach; ?>
                     <?php else: ?>
@@ -114,7 +114,7 @@ $currentImages = array_filter(array_map('trim', explode(',', $row['gambar'])));
                 </button>
             </form>
 
-            <form action="../proses_hapus.php" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini? Tindakan tidak dapat dibatalkan.');" style="margin-top: 20px;">
+<form action="proses_hapus.php" method="POST" onsubmit="return confirm('Yakin ingin menghapus produk ini? Tindakan tidak dapat dibatalkan.');" style="margin-top: 20px;">
                 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                 <button type="submit" style="background: #f44336; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; cursor: pointer; font-weight: bold;">
                     Hapus Produk

@@ -27,7 +27,7 @@ $foto_produk = array_filter(array_map('trim', explode(',', $data['gambar'])));
             <div class="detail-slider" id="mainSlider">
                 <?php foreach($foto_produk as $img) : ?>
                     <div class="detail-slide">
-                        <img src="gambar/<?php echo trim($img); ?>" alt="<?php echo $data['nama']; ?>">
+                        <img src="<?php echo IMAGES_URL . htmlspecialchars(trim($img)); ?>" alt="<?php echo $data['nama']; ?>">
                     </div>
                 <?php endforeach; ?>
             </div>

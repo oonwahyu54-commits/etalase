@@ -22,12 +22,13 @@ if(isset($_FILES['gambar']) && $_FILES['gambar']['error'] == 0){
     $tmp = $_FILES['gambar']['tmp_name'];
 
     $namaBaru = time() . '_' . $namaFile;
-    $path = "../gambar/" . $namaBaru;
+    $path = IMAGES_PATH . $namaBaru;
 
     if(move_uploaded_file($tmp, $path)){
         // hapus gambar lama (opsional tapi bagus)
-        if(file_exists("../gambar/" . $data['gambar'])){
-            unlink("../gambar/" . $data['gambar']);
+        $oldPath = IMAGES_PATH . $data['gambar'];
+        if(file_exists($oldPath)){
+            unlink($oldPath);
         }
 
         $gambar = $namaBaru;
@@ -64,7 +65,7 @@ mysqli_query($koneksi, "UPDATE slider SET
         <textarea name="deskripsi" required><?php echo htmlspecialchars($data['deskripsi']); ?></textarea>
 
         <label>Gambar Saat Ini</label><br>
-        <img src="../gambar/<?php echo $data['gambar']; ?>" width="150"><br><br>
+        <img src="<?php echo IMAGES_URL . htmlspecialchars($data['gambar']); ?>" width="150"><br><br>
 
         <label>Ganti Gambar</label>
         <input type="file" name="gambar" accept="image/*">
