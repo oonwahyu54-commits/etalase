@@ -30,11 +30,11 @@
         <div class="logo">
             <?php if (isset($_SESSION['user_id'])): ?>
                 <a href="admin/dashboard.php" class="logo-btn" title="Dashboard Admin">
-                    <img src="<?php echo IMAGES_URL; ?>mitra.png" alt="Admin">
+                    <img src="<?php echo IMAGES_URL; ?>mitra1.png" alt="Admin">
                 </a>
             <?php else: ?>
                 <a href="login.php" class="logo-btn" title="Login Admin">
-                    <img src="<?php echo IMAGES_URL; ?>mitra.png" alt="Login Admin">
+                    <img src="<?php echo IMAGES_URL; ?>mitra1.png" alt="Login Admin">
                 </a>
             <?php endif; ?>
         </div>

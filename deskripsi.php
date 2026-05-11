@@ -78,7 +78,9 @@ $foto_produk = array_filter(array_map('trim', explode(',', $data['gambar'])));
             </div>
 
             <br>
-            <a href="index.php" class="btn-back">← Kembali</a>
+            <a href="index.php" class="btn-back">
+    <i class="fas fa-arrow-left"></i> Kembali
+</a>
         </div>
     </div>
 </div>
