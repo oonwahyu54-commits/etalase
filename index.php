@@ -151,5 +151,6 @@ setInterval(() => {
 initDots();
 showSlide(0);
 </script>
+<?php include 'footer.php'; ?>
 </body>
 </html>

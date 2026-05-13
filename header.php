@@ -25,8 +25,7 @@
                 <?php endif; ?>
             </nav>
         </div>
-
-        <!-- LOGO JADI TOMBOL LOGIN -->
+        
         <div class="logo">
             <?php if (isset($_SESSION['user_id'])): ?>
                 <a href="admin/dashboard.php" class="logo-btn" title="Dashboard Admin">

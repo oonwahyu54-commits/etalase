@@ -1285,7 +1285,7 @@ header {
 }
 
 .about-header {
-    background: #ffb3c6;
+    background: #ffb0b5;
     color: white;
     padding: 40px 30px;
     text-align: center;
@@ -1509,7 +1509,7 @@ header {
 }
 
 .back-link a {
-    color: #ff8fab;
+    color: #ffb3c6;
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
@@ -1562,57 +1562,124 @@ header {
     padding-bottom: 10px;
 }
 
-
 .kontak-methods {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 15px;
     margin-top: 20px;
 }
+
+/* Card tombol */
 .kontak-btn {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 30px 20px;
-    border-radius: 15px;
+    padding: 18px 12px;
+    border-radius: 14px;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    box-shadow: 0 8px 20px #ffb3c6;
+    font-weight: 600;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border: 1px solid rgba(255,255,255,0.5);
 }
 
+/* Icon */
 .kontak-btn .icon {
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-size: 1.8em;
+    margin-bottom: 8px;
+    transition: 0.3s ease;
 }
 
+/* Text */
 .kontak-btn span {
-    font-size: 1.1em;
+    font-size: 0.95em;
+    transition: 0.3s ease;
 }
 
+/* WARNA AWAL SOFT */
 .kontak-btn.whatsapp {
-    background: linear-gradient(135deg, #25D366, #20BA5A);
-    color: #333;
+    background: #eefaf2;
+    color: #4c9b68;
 }
 
 .kontak-btn.shopee {
-    background: linear-gradient(135deg, #EF3B2D, #D82C2A);
-    color: #333;
+    background: #fff3ef;
+    color: #c96a4b;
 }
 
 .kontak-btn.facebook {
-    background: linear-gradient(135deg, #1877F2, #0A66C2);
-    color: #333;
+    background: #eef4ff;
+    color: #5b7dbd;
 }
 
 .kontak-btn.instagram {
-    background: linear-gradient(135deg, #E4405F, #D92E7F);
-    color: #333;
+    background: #fff0f5;
+    color: #c2678f;
 }
+
+/* HOVER */
 .kontak-btn:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.10);
+}
+
+/* WARNA AWAL SOFT */
+.kontak-btn.whatsapp {
+    background: #eefaf2;
+    color: #4c9b68;
+}
+
+.kontak-btn.shopee {
+    background: #fff3ef;
+    color: #c96a4b;
+}
+
+.kontak-btn.facebook {
+    background: #eef4ff;
+    color: #5b7dbd;
+}
+
+.kontak-btn.instagram {
+    background: #fff0f5;
+    color: #c2678f;
+}
+
+/* SAAT DISENTUH / HOVER */
+
+/* WhatsApp */
+.kontak-btn.whatsapp:hover {
+    background: #25D366;
+    color: white;
+}
+
+/* Shopee */
+.kontak-btn.shopee:hover {
+    background: #EE4D2D;
+    color: white;
+}
+
+/* Facebook */
+.kontak-btn.facebook:hover {
+    background: #1877F2;
+    color: white;
+}
+
+/* Instagram */
+.kontak-btn.instagram:hover {
+    background: linear-gradient(
+        135deg,
+        #f9ce34,
+        #ee2a7b,
+        #6228d7
+    );
+    color: white;
+}
+
+/* Efek hover */
+.kontak-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
 }
 
 .kontak-footer {
@@ -1908,4 +1975,247 @@ header {
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background: linear-gradient(135deg, #ffb0b5 0%, #ffb8c1 100%);
+    color: white;
+    padding: 20px 10px 10px 10px;
+    margin-top: 20px;
+    border-top: 3px solid #ff8fa3;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-section {
+    animation: fadeInUp 0.6s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-title {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+.footer-heading {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-desc {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.95em;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    padding-left: 0;
+    font-size: 0.95em;
+}
+
+.footer-links a:before {
+    content: none;
+}
+
+.footer-links a:hover {
+    color: white;
+    font-weight: 600;
+}
+
+.footer-links a:hover:before {
+    opacity: 0;
+    transform: none;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.social-link:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+    border-color: white;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link i {
+    font-size: 18px;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.footer-contact i {
+    color: rgba(255, 255, 255, 0.8);
+    width: 20px;
+    text-align: center;
+}
+
+.footer-divider {
+    height: 2px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.1));
+    margin-bottom: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9em;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom strong {
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.footer-bottom i {
+    color: #ff6b7a;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 40px 15px 15px 15px;
+        margin-top: 40px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .footer-title {
+        font-size: 20px;
+    }
+
+    .footer-heading {
+        font-size: 15px;
+    }
+
+    .footer-links a:before {
+        display: none;
+    }
+
+    .footer-links a:hover {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 30px 10px 10px 10px;
+    }
+
+    .footer-content {
+        gap: 20px;
+    }
+
+    .footer-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .footer-heading {
+        font-size: 14px;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-contact p {
+        font-size: 0.9em;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8em;
+    }
 }
