@@ -810,14 +810,14 @@ header {
 .form-container input:focus,
 .form-container textarea:focus {
     outline: none;
-    border-color: #D81B60;
-    box-shadow: 0 0 5px rgba(216, 27, 96, 0.3);
+    border-color: #ff8fa3;
+    box-shadow: 0 0 5px rgba(255, 138, 153, 0.3);
 }
 
 .form-container button {
     width: 100%;
     padding: 12px;
-    background: #D81B60;
+    background: linear-gradient(135deg, #ffb0b5 100%);
     color: white;
     border: none;
     border-radius: 4px;
@@ -828,7 +828,7 @@ header {
 }
 
 .form-container button:hover {
-    background: #D81B60;
+    background: #ff8fa3;
 }
 
 .tmbh {
@@ -839,7 +839,7 @@ header {
 .tmbh a {
     display: inline-block;
     padding: 10px 20px;
-    background: #D81B60;
+    background: linear-gradient(135deg, #ffb0b5 100%);
     color: white;
     text-decoration: none;
     border-radius: 4px;
@@ -847,19 +847,19 @@ header {
 }
 
 .tmbh a:hover {
-    background: #D81B60;
+    background: #ff8fa3;
 }
 
 /* ========== ADMIN DASHBOARD ========== */
 .admin-container {
     display: flex;
     min-height: 100vh;
-    background: #FFFFFF;
+    background: #fff5ee;
 }
 
 .admin-sidebar {
     width: 250px;
-    background: linear-gradient(135deg, #D81B60);
+    background: linear-gradient(135deg, #ffb0b5 100%);
     color: white;
     padding: 20px;
     position: fixed;
@@ -877,7 +877,7 @@ header {
     margin-bottom: 30px;
     padding-bottom: 15px;
 
-    color: #ffe4ec; /* putih pink lembut sesuai tema */
+    color: #ffffff;
     font-weight: 700;
     letter-spacing: 1px;
 
@@ -914,22 +914,22 @@ header {
 
 .logout-btn {
     margin-top: auto;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.3);
     display: block !important;
     text-align: center;
     margin-top: 30px;
 }
 
 .admin-header {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     margin-bottom: 30px;
 }
 
 .admin-header h1 {
-    color: #D81B60;
+    color: #ff8fa3;
     margin: 0;
 }
 
@@ -947,11 +947,11 @@ header {
 }
 
 .stat-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-left: 4px solid #D81B60;
+    box-shadow: 0 4px 20px rgba(216, 27, 96, 0.1);
+    border-left: 4px solid #ff8fa3;
 }
 
 .stat-card h3 {
@@ -962,21 +962,21 @@ header {
 }
 
 .stat-card .stat-number {
-    color: #D81B60;
+    color: #ff8fa3;
     font-size: 2.5em;
     font-weight: bold;
     margin: 0;
 }
 
 .content-section {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(216, 27, 96, 0.1);
 }
 
 .content-section h2 {
-    color: #D81B60;
+    color: #ff8fa3;
     margin-top: 0;
 }
 
@@ -987,7 +987,7 @@ header {
 }
 
 .action-btn {
-    background: linear-gradient(135deg, #D81B60);
+    background: linear-gradient(135deg, #ffb0b5 100%);
     color: white;
     padding: 15px;
     border-radius: 6px;
@@ -1017,7 +1017,7 @@ header {
 
 /* ========== ADMIN PRODUCT LIST ========== */
 .admin-produk-body {
-    background: #f4f4f4;
+    background: #fff5ee;
     margin: 0;
     font-family: Arial, sans-serif;
 }
@@ -1029,15 +1029,15 @@ header {
 }
 
 .admin-produk-box {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 20px rgba(216, 27, 96, 0.12);
     padding: 24px;
 }
 
 .admin-produk-box h1 {
     margin-top: 0;
-    color: #D81B60;
+    color: #ff8fa3;
 }
 
 .topbar {
@@ -1050,7 +1050,7 @@ header {
 
 .topbar a,
 .topbar .button {
-    background: #D81B60;
+    background: linear-gradient(135deg, #ffb0b5 100%);
     color: white;
     padding: 12px 18px;
     border-radius: 8px;
@@ -1076,7 +1076,7 @@ header {
 }
 
 .admin-produk-table th {
-    background: #f8f2f8;
+    background: rgba(255, 176, 181, 0.18);
     color: #333;
 }
 
@@ -1142,7 +1142,7 @@ header {
 }
 
 .radio-group input[type="radio"] {
-    accent-color: #D81B60;
+    accent-color: #ff8fa3;
     margin: 0;
 }
 
@@ -1188,7 +1188,7 @@ header {
 .primary-btn {
     width: 100%;
     padding: 15px;
-    background: #D81B60;
+    background: linear-gradient(135deg, #ffb0b5 100%);
     color: white;
     border: none;
     border-radius: 8px;
@@ -1199,13 +1199,13 @@ header {
 }
 
 .primary-btn:hover {
-    background: #D81B60;
+    background: #ff8fa3;
 }
 
 .danger-btn {
     width: 100%;
     padding: 12px;
-    background: #f44336;
+    background: #ff8fa3;
     color: white;
     border: none;
     border-radius: 8px;
@@ -1215,7 +1215,7 @@ header {
 }
 
 .danger-btn:hover {
-    background: #d32f2f;
+    background: #ff6b81;
 }
 
 .form-back-container {
@@ -1224,12 +1224,12 @@ header {
 }
 
 .form-back {
-    color: #666;
+    color: #ff8fa3;
     text-decoration: none;
 }
 
 .form-back:hover {
-    color: #D81B60;
+    color: #ff6b81;
 }
 
 .category-section {
@@ -1604,17 +1604,17 @@ header {
 }
 
 .kontak-btn.shopee {
-    background: #fff3ef;
+    background: #eefaf2;
     color: #c96a4b;
 }
 
 .kontak-btn.facebook {
-    background: #eef4ff;
+    background: #eefaf2;
     color: #5b7dbd;
 }
 
 .kontak-btn.instagram {
-    background: #fff0f5;
+    background: #eefaf2;
     color: #c2678f;
 }
 
@@ -1631,17 +1631,17 @@ header {
 }
 
 .kontak-btn.shopee {
-    background: #fff3ef;
+    background: #eefaf2;
     color: #c96a4b;
 }
 
 .kontak-btn.facebook {
-    background: #eef4ff;
+    background: #eefaf2;
     color: #5b7dbd;
 }
 
 .kontak-btn.instagram {
-    background: #fff0f5;
+    background: #eefaf2;
     color: #c2678f;
 }
 
@@ -1650,19 +1650,19 @@ header {
 /* WhatsApp */
 .kontak-btn.whatsapp:hover {
     background: #25D366;
-    color: white;
+    color: #eefaf2;
 }
 
 /* Shopee */
 .kontak-btn.shopee:hover {
     background: #EE4D2D;
-    color: white;
+    color: #eefaf2;
 }
 
 /* Facebook */
 .kontak-btn.facebook:hover {
     background: #1877F2;
-    color: white;
+    color: #eefaf2;
 }
 
 /* Instagram */
@@ -1673,7 +1673,7 @@ header {
         #ee2a7b,
         #6228d7
     );
-    color: white;
+    color:#eefaf2;
 }
 
 /* Efek hover */
@@ -1817,15 +1817,15 @@ header {
 
 /* Box */
 .admin-produk-box {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 15px;
     padding: 25px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px rgba(216, 27, 96, 0.1);
 }
 
 /* Header */
 .admin-produk-box h1 {
-    color: #D81B60;
+    color: #ff8fa3;
 }
 
 /* Topbar */
@@ -1838,7 +1838,7 @@ header {
 
 /* Button Tambah */
 .topbar a {
-    background: #D81B60;
+    background: linear-gradient(135deg, #ffb0b5 100%);
     color: white;
     padding: 10px 18px;
     border-radius: 8px;
@@ -1848,7 +1848,7 @@ header {
 }
 
 .topbar a:hover {
-    background: #c2185b;
+    background: #ff8fa3;
 }
 
 /* Table */
@@ -1858,8 +1858,8 @@ header {
 }
 
 .admin-produk-table th {
-    background: #ffe4ec;
-    color: #D81B60;
+    background: rgba(255, 176, 181, 0.18);
+    color: #ff8fa3;
     padding: 12px;
 }
 
@@ -1886,11 +1886,11 @@ header {
 }
 
 .actions .edit {
-    background: #2196f3;
+    background: #ff8fa3;
 }
 
 .actions .delete {
-    background: #f44336;
+    background: #ff6b81;
 }
 
 /* Hover */
@@ -1903,14 +1903,14 @@ header {
     max-width: 500px;
     margin: 40px auto;
     padding: 25px;
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(216, 27, 96, 0.1);
 }
 
 .form-container h2 {
     text-align: center;
-    color: #D81B60;
+    color: #ff8fa3;
     margin-bottom: 20px;
 }
 
@@ -1932,16 +1932,16 @@ header {
 
 .form-container input:focus,
 .form-container textarea:focus {
-    border-color: #D81B60;
+    border-color: #ff8fa3;
     outline: none;
-    box-shadow: 0 0 5px rgba(216,27,96,0.3);
+    box-shadow: 0 0 5px rgba(255, 138, 153, 0.3);
 }
 
 /* Button */
 .form-container button {
     width: 100%;
     padding: 12px;
-    background: #D81B60;
+    background: linear-gradient(135deg, #ffb0b5 100%);
     color: white;
     border: none;
     border-radius: 8px;
@@ -1950,7 +1950,7 @@ header {
 }
 
 .form-container button:hover {
-    background: #c2185b;
+    background: #ff8fa3;
 }
 
 /* Back */
@@ -1960,7 +1960,7 @@ header {
 }
 
 .form-back {
-    color: #D81B60;
+    color: #ff8fa3;
     text-decoration: none;
 }
 
@@ -2015,20 +2015,23 @@ footer {
 }
 
 .footer-title {
+    color: #fff;
     font-family: 'Cinzel', serif;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-shadow: black 1px 1px 3px;
     letter-spacing: 1px;
 }
 
 .footer-heading {
+    color: rgba(255, 255, 255, 0.95);
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    text-shadow: black 1px 1px 3px;
 }
 
 .footer-desc {
